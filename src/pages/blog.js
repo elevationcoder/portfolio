@@ -1,7 +1,11 @@
 import React from "react"
 import Link from "gatsby-link"
-const BlogPage = ({ data }) => {
-  return (
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+const BlogPage = ({ data }) => (
+  <Layout>
+    <SEO title="Blog page" />
     <div>
       <h1>My Latest Posts</h1>
       <p>
@@ -23,8 +27,8 @@ const BlogPage = ({ data }) => {
         </div>
       ))}
     </div>
-  )
-}
+  </Layout>
+)
 export const pageQuery = graphql`
   query BlogIndexQuery {
     allMarkdownRemark {
